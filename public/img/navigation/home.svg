@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu" transform="translate(-32.000000, -16.000000)" fill="#512B2B" fill-rule="nonzero">
+            <g id="Navigational/Home/Brown">
+                <g transform="translate(32.000000, 15.000000)">
+                    <path d="M2.125,12.0416667 L8.52083333,5.66666667 L14.875,12.0416667 L14.875,16.2916667 L9.91666667,16.2916667 L9.91666667,11.3333333 L7.08333333,11.3333333 L7.08333333,16.2916667 L2.125,16.2916667 L2.125,12.0416667 Z M14.1666667,7.08333333 L16.6458333,9.5625 L15.2291667,10.9791667 L8.5,4.25 L1.77083333,10.9791667 L0.354166667,9.5625 L8.5,1.41666667 L12.0416667,4.95833333 L12.0416667,2.83333333 L14.1666667,2.83333333 L14.1666667,7.08333333 Z" id="Home"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

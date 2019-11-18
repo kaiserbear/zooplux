@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="18px" height="17px" viewBox="0 0 18 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Help</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu" transform="translate(-31.000000, -431.000000)">
+            <g id="Help">
+                <g transform="translate(31.619048, 431.000000)">
+                    <circle id="Oval" fill="#512B2B" fill-rule="evenodd" cx="8.5" cy="8.5" r="8.5"></circle>
+                    <text id="?" font-family="SwedbankHeadlineBold, Swedbank Headline" font-size="14" font-weight="bold" fill="#FFFFFF">
+                        <tspan x="5" y="13">?</tspan>
+                    </text>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

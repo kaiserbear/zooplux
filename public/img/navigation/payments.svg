@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>Icon</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Menu" transform="translate(-32.000000, -62.000000)" fill="#512B2B" fill-rule="nonzero">
+            <g id="Navigational/Payments-and-transfers/Brown">
+                <g transform="translate(32.000000, 62.000000)">
+                    <path d="M4.25,7.08333333 L4.25,10.625 L0,5.66666667 L4.25,0.708333333 L4.25,4.25 L9.91666667,4.25 L9.91666667,7.08333333 L4.25,7.08333333 Z M17,10.625 L12.0416667,15.5833333 L12.0416667,12.0416667 L6.375,12.0416667 L6.375,9.20833333 L12.0416667,9.20833333 L12.0416667,5.66666667 L17,10.625 Z" id="Payments-and-transfers"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

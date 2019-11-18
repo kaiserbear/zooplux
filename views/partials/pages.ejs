@@ -1,0 +1,21 @@
+        <nav id="sideNav" class="side-nav">
+         <ul class="navbar-nav mr-auto">
+            <% pages.forEach(function(item){ %>
+              <li class="nav-item">
+              	<% if (item.category === "guidelines" && item.slug === "using-the-cms") { %>
+                	<a href="/pages/using-the-cms/" class="nav-link">Using The CMS</a>
+            	<% } else if (item.category === "design-system") { %>
+                		<a href="/pages/foundations" class="nav-link">Foundations</a>
+                	</li>
+                	<li class="nav-item">
+                		<a href="/pages/components" class="nav-link">Components</a>
+                	<li class="nav-item">
+                		<a href="/pages/templates" class="nav-link">Templates</a>
+                	</li>
+                <% } else { %>
+                	   <a href="/pages/<%= item.category %>/<%= item.slug %>" class="nav-link"><%= item.name %></a>
+                <% } %>
+              </li>
+            <% }); %>
+          </ul>
+        </nav>

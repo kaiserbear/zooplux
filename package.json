@@ -1,0 +1,50 @@
+{
+  "name": "ux-renegade",
+  "version": "0.0.1",
+  "description": "A UX forum for testing new ideas.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Kaiser Bear",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.5",
+    "async": "^2.6.1",
+    "aws-sdk": "^2.296.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.14.1",
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.7",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.4",
+    "del": "^3.0.0",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.8",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "gulp": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "hoek": "^5.0.3",
+    "jquery": "^3.4.1",
+    "jsonfile": "^5.0.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.13.17",
+    "node-sass": "^4.9.3",
+    "nodemailer": "^4.6.8",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.5.0",
+    "popper.js": "^1.14.3",
+    "sendmail": "^1.4.1",
+    "slugify": "^1.3.1",
+    "wysiwyg-editor-node-sdk": "^2.3.4",
+    "xoauth2": "^1.2.0"
+  },
+  "devDependencies": {
+    "gulp-cli": "^2.0.1",
+    "gulp-watch-sass": "^1.4.1"
+  }
+}

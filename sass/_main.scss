@@ -1,0 +1,400 @@
+header {
+    height: 79px;
+    width: 100%;
+    display: block;
+    border-bottom: 1px solid #EBE7E2;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -5px;
+        border-radius: inherit;
+        background: linear-gradient(to right, #FA7F25, #FDBE13);
+        height: 10px;
+    }
+    .logo {
+        padding: 27px 0 0 35px;
+        display: block;
+        img {
+            width: 150px; 
+        }
+    }
+    ul {
+        position: absolute;
+        top: 35px;
+        right: 0; 
+        list-style: none;
+        font-family: 'swedbank_sansmedium', sans-serif;
+        li {
+            float:left;
+            margin-right: 1rem;
+            
+            a {
+                color: $brown;
+                text-decoration: none;
+                font-size: 14px;
+                span {
+                    display: none;
+                }
+                img {
+                    margin-right: 0.5rem;
+                    width: 15px;
+                    height: 17px;
+                }
+            }
+        }
+    }
+}
+
+a {
+    &:hover {
+        color: $orange;
+    }
+}
+
+main {
+    height:100%;
+    left: 55px;
+    font-size: 14px;
+    position: relative;
+    width: calc(100% - 55px);
+    
+    &.login {
+        height: calc(100% - 112px);
+    }
+
+    .code-loading {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: calc(50% - 100px);
+    }
+
+    .code-display {
+        opacity: 0;
+
+        h5 {
+            margin: 0 0 1rem 0;
+            padding-bottom: 0;
+        }
+
+        [class*="inline-code"] {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .CodeMirror {
+        background: rgba(60, 133, 248, 0.08);
+        margin-bottom: 2rem;
+        font-size: 1.2rem;
+        border: none;
+        height: auto;
+    }
+
+    .CodeMirror-scroll {
+        max-height: 270px;
+    }
+}
+
+footer {
+    background: white;
+}
+
+.hide {
+    display: none;
+}
+
+h5.modal-title {
+    font-size: 16px;
+}
+
+@include media-breakpoint-up(sm) {
+    main {
+        padding-top: 0;
+
+        &.login {
+            height: calc(100% - 57px);
+        }
+    }
+}
+
+
+@include media-breakpoint-up(lg) {
+    #page--content {
+        margin: 0;
+
+        .description {
+            img {
+                width: 100%;
+                margin: 2rem 0;
+
+                &.lightbox {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    main {
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        min-height: calc(100% - 57px);
+        width: calc(100% - 249px);
+        left: 249px;
+        position: relative;
+
+        &.active, &.login {
+            width: 100%;
+            left: 0;
+        }
+    }
+}
+
+
+section {
+    margin: 0 1rem;
+
+    section {
+        margin-bottom: 2rem;
+    }
+}
+
+.page--heading {
+    padding: 120px 0 2rem 0;
+    margin: 0;
+
+    hr {
+        margin: 3rem 0 0 0;
+    }
+
+    h2 {
+        font-size: 45px;
+    }
+
+    header {
+        p {
+            font-family: "Work Sans";
+            font-size: 18px;
+            line-height: 28px;
+        }
+    }
+
+    &:first-of-type {
+        margin-top: 0;
+    }
+
+    .col-sm-12 {
+        padding: 0 2rem;
+    }
+
+    h2, h3 {
+        color: $orange;
+    }
+
+    h2, h3 {
+        &:first-of-type {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    p {
+        &:last-of-type {
+            margin: 0;
+        }
+    }
+
+    &.category {
+        background: #e8e8e8;
+        background-repeat: repeat-x;
+        background-position: 0 center;
+
+        h2, h3, p {
+            // color: white;
+       
+        }
+    }
+
+    h3 {
+        font-weight: normal;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+    .page--heading {
+        .col-sm-12 {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+}
+
+
+.page--content {
+    padding-top: 2rem;
+
+    section {
+        margin: 4rem 0;
+
+        &:first-of-type {
+            padding-top: 0;
+            margin-top: 0;
+        }
+    }
+
+    h2, h3 {
+        &:first-of-type {
+            padding-top: 0;
+        }
+    }
+}
+
+.page--heading, .page--content {
+    hr {
+        box-sizing: content-box;
+        overflow: visible;
+        height: 4px;
+        width: 200px;
+        border-radius: 2px;
+        background-color: #5F2ED8;
+        text-align: left;
+        margin-left: 0;
+        margin: 3rem 0 0;
+        border: none;
+    }
+}
+
+.submitted {
+    color: #a9a9a9;
+    font-family: helvetica;
+    font-weight: 300;
+
+    strong {
+        font-weight: 900;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    .justify-right {
+        text-align: right;
+    }
+}
+
+
+.panel {
+    background: white;
+    border-left: 3px solid $orange;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.page--scroll {
+    margin: 0;
+    padding: 0 15px 0 0;
+}
+
+.login {
+    height: 100%;
+
+    .container {
+        padding: 4rem 2rem;
+    }
+
+    .login-form {
+        // background-color: #DFDBE5;
+        padding: 2rem;
+        border-radius: 0.25rem;
+    }
+}
+
+.btn-primary {
+    background-color: $orange;
+    border: 1px solid $orange;
+}
+
+.kindred-border {
+    height: 2px;
+    width: 100%;
+}
+
+.fr-img-wrap {
+    text-align: center;
+    display: block;
+}
+
+blockquote {
+    padding: 0 0 0 1rem;
+    border-left: 3px solid $orange;
+}
+
+footer {
+    // background: $blue-3;
+    border-top: 1px solid $border;
+    padding: 1rem 0;
+    color: rgba(0, 0, 0, 0.49);
+    position: relative;
+    z-index: 30;
+    padding: 0 1rem;
+    width: 100%;
+    display: flex;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        li {
+            margin: 1rem 0;
+        }
+    }
+}
+
+.user-controls {
+    form {
+        display: initial;
+    }
+}
+
+.main {
+    padding: 1rem 0;
+    position: relative;
+
+    &.side {
+        left: 280px;
+        position: relative;
+        width: calc(100% - 280px);
+    }
+
+    h3 {
+        margin-bottom: 2rem;
+        padding-bottom: 0;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    header {
+        ul {
+            li {
+                a {
+                    span {
+                        display: inline-block;
+                    }
+                }
+               
+            }
+        }
+    }
+    .main {
+        padding: 2rem 0;
+    }
+}

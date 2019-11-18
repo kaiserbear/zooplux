@@ -1,0 +1,99 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    .modal-backdrop {
+        z-index: 20;
+    }
+}
+
+
+button {
+    cursor: pointer;
+
+    &:focus {
+        outline: 0;
+    }
+}
+
+a {
+    color: $orange;
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: inherit;
+    font-family: 'swedbank_sansmedium', sans-serif;
+    color: $orange;
+}
+
+h1 {
+    font-size: 45px;
+    line-height: 55px;
+    padding: 60px 0 15px 0;
+}
+
+h2 {
+    font-size: 32px;
+    line-height: 42px;
+    padding: 30px 0 15px 0;
+}
+
+h3 {
+    font-size: 28px;
+    line-height: 38px;
+    padding: 30px 0 15px 0;
+}
+
+h4 {
+    font-size: 23px;
+    line-height: 33px;
+    padding: 30px 0 15px 0;
+}
+
+hr {
+    border-top: 1px solid #e8e7e7;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+}
+
+
+p {
+    font-size: 16px;
+    line-height: 26px;
+    color: #232333;
+    text-align:left;
+    &.small {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &.large {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    &.xlarge {
+        font-size: 21px;
+        line-height: 31px;
+    }
+}
+
+
+strong {
+    font-weight: 600;
+}
+
+
+.center {
+    text-align: center;
+}
+
+h3 {
+    span {
+        text-transform: capitalize;
+    }
+}

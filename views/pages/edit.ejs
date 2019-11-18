@@ -1,0 +1,244 @@
+<% include ../partials/header %>
+<% include ../partials/alerts %>
+<% include ../partials/nav %>
+<% include ../partials/side-nav %>
+
+<main id="admin" class="main-content-container">
+
+<section id="page--content" class="admin main">
+    <div class="container">
+        <form id="page" action="/pages/<%= page.category %>/<%= page.slug %>?_method=PUT" method="POST">
+            <div class="col-sm-12 col-md-8 offset-md-2">
+                <!-- Page Version -->
+                <h3>Edit "<%= page.name %>"</h3>
+                <div class="updated">
+                    <p>Last update by <%= page.author.username %> on <strong><%= page.updated.toLocaleString("en-GB") %></strong></p>
+                </div>
+                <div class="row">
+                    <div class="col-5">
+                        <div class="form-group">
+                            <label>Title</label>
+                            <input class="form-control" type="text" name="page[name]" value="<%= page.name %>" required>
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="form-group">
+                            <label>URL</label>
+                            <div class="form--input__url">
+                                <input id="domain-url" class="form-control" type="text" name="page[slug]" value="<%= page.slug %>" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Page Category</label>
+                            <div class="form--input__url">
+                                <select class="form-control" type="text" name="page[category]" required>
+                                    <% for (var i = 0; i < allCategories.length; i++) { %>
+                                        <% if (page.category === allCategories[i].slug) {%>
+                                            <option value="<%= allCategories[i].slug %>" selected><%= allCategories[i].name %></option>
+                                        <% } else { %>
+                                            <option value="<%= allCategories[i].slug %>"><%= allCategories[i].name %></option>
+                                         <% } %>
+                                    <% } %>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea class="form-control description" type="text" name="page[description]" placeholder="Describe this page in approx 100 characters" required><%= page.description %></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sections -->
+               
+                <div class="row">
+                    <div class="col-12">
+                        <label>Sections</label>
+                        <div id="sortable">
+                            <% for (var i = 0; i < page.section.length; i++) { %>                            
+                                <div class="to-be-sorted">
+
+                                    <div class="section-handle" data-toggle="collapse" data-target="#section-<%=[i]%>" data-sect="<%=[i]%>">
+                                        <div class="grab"></div>
+                                        <span id="sectionTitle-<%=[i]%>"><%= page.section[i]%></span>
+                                        <span class="toggle-symbol"></span>
+                                    </div>
+                                    
+                                    <section class="section">
+                                        <div id="section-<%=[i]%>" class="collapse">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label>Section Title</label>
+                                                        <div class="form--input__url">
+                                                            <input class="form-control section-title" type="text" name="page[section]" data-title="sectionTitle-<%=[i]%>" value="<%= page.section[i]%>" required />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <label>WYSIWYG</label>
+                                                        <textarea class="form-control froala" type="text" name="page[content]"><%= page.content[i]%></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <div class="code-view">
+                                                            <h5>Hide</h5>
+                                                            <input type="hidden" class="hidden-hide-check" name="page[htmlHide]" value="<%= page.htmlHide[i]%>" />
+                                                            <label class="switch">
+                                                                <% if (page.htmlHide[i] === 'true') { %>
+                                                                <input class="code-hide" type="checkbox" checked>
+                                                                <% } else { %>
+                                                                <input class="code-hide" type="checkbox">
+                                                                <% } %>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <label>HTML</label>
+                                                        <textarea id="html-cm-<%=[i]%>" class="code-codemirror" data-type="html" class="form-control" type="text" name="page[html]"><%= page.html[i]%></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="form-group">
+                                                        <div class="code-view">
+                                                            <h5>Hide</h5>
+                                                            <input type="hidden" class="hidden-hide-check" name="page[cssHide]" value="<%= page.cssHide[i]%>" />
+                                                            <label class="switch">
+                                                                <% if (page.cssHide[i] === 'true') { %>
+                                                                <input class="code-hide" type="checkbox" checked>
+                                                                <% } else { %>
+                                                                <input class="code-hide" type="checkbox">
+                                                                <% } %>
+                                                                <span class="slider round"></span>
+                                                            </label>
+                                                        </div>
+                                                        <label>SCSS</label>
+                                                        <textarea id="css-cm-<%=[i]%>" class="code-codemirror" data-type="css" class="form-control" type="text" name="page[css]"><%= page.css[i]%></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="section--manage">
+                                                <button class="btn btn-delete dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Delete
+                                                </button>
+                                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                                    <p>Are you sure you want to remove this section?</p>
+                                                    <a href="#" class="remove-btn">Confirm</a>
+                                                    <span class="close-btn">Cancel</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                </div>
+                            <% } %>
+                        </div>
+                        <a href="#" id="addSctnBtn" class="btn btn-admin">Add new section</a>
+                    </div>
+                </div>
+
+                <!-- Empty Added Section // Probably bettter to add this section via AJAX or another method -->
+                <div id="newSctn" class="to-be-sorted hide">
+                    <div id="toggleReplace" class="section-handle" data-toggle="collapse" data-target="#section-REPLACE" data-sect="REPLACE">
+                        <div class="grab"></div>
+                        <span id="sectionTitle-REPLACE">New Section</span>
+                        <span class="toggle-symbol"></span>
+                    </div>
+                    <section class="section">
+                        <div id="section-REPLACE" class="collapse">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>Section Title</label>
+                                        <div class="form--input__url">
+                                            <input class="form-control section-title" data-title="sectionTitle-REPLACE" type="text" name="page[section]" value="" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label>WYSIWYG</label>
+                                        <textarea class="form-control newFroala" type="text" name="page[content]"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="code-view">
+                                            <h5>Hide</h5>
+                                            <input type="hidden" class="hidden-hide-check" name="page[htmlHide]" value="" />
+                                            <label class="switch">
+                                                <input class="code-hide" type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                        <label>HTML</label>
+                                        <textarea id="html-cm-REPLACE" class="code-codemirror" data-type="html" class="form-control" type="text" name="page[html]"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <div class="code-view">
+                                            <h5>Hide</h5>
+                                            <input type="hidden" class="hidden-hide-check" name="page[cssHide]" value="" />
+                                            <label class="switch">
+                                                <input class="code-hide" type="checkbox">
+                                                <span class="slider round"></span>
+                                            </label>
+                                        </div>
+                                        <label>SCSS</label>
+                                        <textarea id="css-cm-REPLACE" class="code-codemirror" data-type="css" class="form-control" type="text" name="page[css]"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="section--manage">
+                                <button class="btn btn-delete dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Delete
+                                </button>
+                                <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                    <p>Are you sure you want to remove this section?</p>
+                                    <a href="#" class="remove-btn">Confirm</a>
+                                    <span class="close-btn">Cancel</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="admin-tools">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8 offset-2">
+                                <div class="col">
+                                    <button id="formSbmt" class="btn btn-primary">Update "<%= page.name %>"</button>
+                                    <button id="goBack" class="btn btn-primary-outline">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<% include ../partials/footer %>

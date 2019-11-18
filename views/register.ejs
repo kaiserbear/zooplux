@@ -1,0 +1,29 @@
+<% include ./partials/header %>
+
+<% include ./partials/alerts %>
+
+<main id="main" class="login">
+	
+<section class="login register">
+	<div class="container">
+	    <div class="row">
+        	<div class="col-sm-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 login-form">
+
+			<form action="/register" method="post">
+                <div class="panel panel-default">
+                  <div class="panel-body">Registration for Renegade users.</div>
+                </div>
+			 	<div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="john.ext.smith@swedbank.se" pattern=".+@swedbank.se" title="Must be a swedbank.se email address" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password" required>
+                </div>
+			    <button type="submit" class="btn btn-lg btn-primary btn-block">Sign Up</button>
+			</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<% include ./partials/footer %> 

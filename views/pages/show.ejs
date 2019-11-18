@@ -1,0 +1,163 @@
+<% include ../partials/header %>
+<% include ../partials/alerts %>
+<% include ../partials/nav %>
+<% include ../partials/side-nav %>
+
+
+<main id="main" class="main-content-container">
+
+<section id="page--heading" class="page--heading">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 offset-md-2">
+                <header>
+                    <h2><%= page.name %></h2>
+                    <p><%= page.description %></p>
+                </header>
+                <hr />
+            </div>
+        </div>
+    </div>
+</section>
+<section id="page--content">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 offset-md-2 page--content">
+                <% for (var i = 0; i < page.section.length; i++) { %>
+                    <% if (page.sectionSlug.length) { %>
+                        <section id="<%- page.sectionSlug[i].toLowerCase() %>" data-inc="indic__<%= page.category %>-<%= page.slug %>"  data-btn="menu__<%- page.category %>-<%- page.slug %>-<%- page.sectionSlug[i].toLowerCase() %>">
+                    <% } else { %>
+                        <section id="<%- page.section[i] %>">
+                    <% } %>
+                    
+                        <h3><%- page.section[i] %></h3>
+                        <div class="description">
+                            <%- page.content[i] %>
+                        </div>
+
+                        <% if (page.html[i] || page.css[i]) { %>
+
+                            <img class="code-loading" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif">
+
+                            <div class="code-display">
+
+                                <div class="inline-code-<%- [i] %>">
+                                    <%- page.html[i] %>
+                                </div>
+
+                                <% if (page.htmlHide[i] === 'false' && page.cssHide[i] === 'false') { %>
+                                    <ul class="nav nav-tabs" id="myTab-<%- [i] %>" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="html-link-<%- [i] %>" data-tab="htmlt-<%- [i] %>" data-toggle="tab" href="#htmlt-<%- [i] %>" role="tab" aria-controls="html-<%- [i] %>" aria-selected="false">HTML</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" id="css-link-<%- [i] %>" data-tab="csst-<%- [i] %>" data-toggle="tab" href="#csst-<%- [i] %>" role="tab" aria-controls="css-<%- [i] %>" aria-selected="true">SCSS</a>
+                                        </li>
+                                    </ul>
+                                <% } else if (page.htmlHide[i] === 'false' && page.cssHide[i] === 'true') { %>
+                                    <ul class="nav nav-tabs" id="myTab-<%- [i] %>" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="html-link-<%- [i] %>" data-tab="htmlt-<%- [i] %>" data-toggle="tab" href="#htmlt-<%- [i] %>" role="tab" aria-controls="html-<%- [i] %>" aria-selected="false">HTML</a>
+                                        </li>
+                                    </ul>
+                                <% } else if (page.htmlHide[i] === 'true' && page.cssHide[i] === 'false') { %>
+                                    <ul class="nav nav-tabs" id="myTab-<%- [i] %>" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" id="css-link-<%- [i] %>" data-tab="csst-<%- [i] %>" data-toggle="tab" href="#csst-<%- [i] %>" role="tab" aria-controls="css-<%- [i] %>" aria-selected="true">SCSS</a>
+                                        </li>
+                                    </ul>
+                                <% } %>
+                            
+                               
+                                <% if (page.htmlHide[i] === 'false' && page.cssHide[i] === 'false') { %>
+                                    <div class="tab-content" id="myTabContent-<%- [i] %>">
+                                        <div class="tab-pane fade show active" id="htmlt-<%- [i] %>" role="tabpanel" aria-labelledby="html-tab">
+                                            <textarea class="code-codemirror read-only" data-type="html" readonly><%-page.html[i]%></textarea>
+                                        </div>
+                                        <div class="tab-pane fade active hide-on-render" id="csst-<%- [i] %>" role="tabpanel" aria-labelledby="css-tab">
+                                            <textarea class="code-codemirror read-only" data-type="css" readonly><%-page.css[i]%></textarea>
+                                        </div>
+                                    </div>
+                                <% } else if (page.htmlHide[i] === 'false' && page.cssHide[i] === 'true') { %>
+                                    <div class="tab-content" id="myTabContent-<%- [i] %>">
+                                        <div class="tab-pane fade show active" id="htmlt-<%- [i] %>" role="tabpanel" aria-labelledby="html-tab">
+                                            <textarea class="code-codemirror read-only" data-type="html" readonly><%-page.html[i]%></textarea>
+                                        </div>
+                                    </div>
+                                <% } else if (page.htmlHide[i] === 'true' && page.cssHide[i] === 'false') { %>
+                                    <div class="tab-content" id="myTabContent-<%- [i] %>">
+                                        <div class="tab-pane fade show active" id="csst-<%- [i] %>" role="tabpanel" aria-labelledby="css-tab">
+                                            <textarea class="code-codemirror read-only" data-type="css" readonly><%-page.css[i]%></textarea>
+                                        </div>
+                                    </div>
+                               <% } %>
+
+                                <style type="text/scss">
+                                    .inline-code-<%- [i] %> {
+                                    <%- page.css[i]  %>
+                                    }
+                                </style>
+                            </div>
+                        <% } %>
+                    </section>
+                <% } %>
+             </div>
+             
+            <% if (user) { %>
+                <div class="admin-tools">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-8 offset-md-2">
+                                <div class="col section--manage">
+                                    <% if (user.role === "admin") { %>
+                                        <button class="btn btn-delete " data-toggle="modal" data-target="#exampleModal">Delete</button>
+                                    <% } %>
+                                     <a class="btn btn-primary pull-right" href="/pages/<%= page.category %>/<%= page.slug %>/edit">Edit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>This will permanently delete this record.</p>
+              </div>
+              <div class="modal-footer">
+                <form id="delete-form" action="/pages/<%= page.category %>/<%= page.slug %>?_method=DELETE" method="POST">
+                    <button class="btn btn-danger">Yes delete <%=page.title%></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+</section>
+<section>
+    <footer id="footer">
+        <div class="col-sm-12 col-md-6">
+            <ul>
+                <li>&copy; Kindred Group PLC 2018. </li>
+            </ul>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <ul class="justify-right">
+                <li>v <%= version %></li>
+            </ul>
+        </div>
+     </footer>
+</section>
+<% include ../partials/footer %>

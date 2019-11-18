@@ -1,0 +1,50 @@
+<% include ../partials/header %>
+<% include ../partials/alerts %>
+<% include ../partials/nav %>
+<% include ../partials/side-nav %>
+
+
+<main id="main" class="main-content-container">
+
+<section id="page--heading" class="page--heading category">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-8 offset-md-2 page--content">
+                <header>
+                    <h3><span><%= categoryTitle %></span></h3>
+                      <% landing.pages.forEach(function(item) { %>
+                            <% if (item.title  ===  category) { %>
+                                <p><%= item.description %></p>
+                            <% } %>
+                      <% }); %>
+                </header>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="page--content" class="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 col-md-8 offset-md-2 page--content">
+				<% landing.pages.forEach(function(item) { %>
+                    <% if (item.title  ===  category) { %>
+                    
+                    	<% item.content.forEach(function(contentItem) { %>
+                    		<section>
+                    		<% if (contentItem.title) { %>
+                        		<h2><%= contentItem.title %></h2>
+                        	<% } %>
+                        	<% if (contentItem.paragraph) { %>
+                        		<p><%= contentItem.paragraph %></p>
+                        	<% } %>
+                        	</section>
+                        <% }); %>
+                    <% } %>
+
+              	<% }); %>
+              	
+			</div>
+		</div>
+	</div>
+</section>
+<% include ../partials/footer %>
