@@ -30,7 +30,7 @@
     "jquery": "^3.4.1",
     "jsonfile": "^5.0.0",
     "method-override": "^2.3.5",
-    "mongoose": "^4.13.17",
+    "mongoose": "^5.7.5",
     "node-sass": "^4.9.3",
     "nodemailer": "^4.6.8",
     "nodemailer-smtp-transport": "^2.7.4",
