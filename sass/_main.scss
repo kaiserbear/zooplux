@@ -13,7 +13,7 @@ header {
         z-index: -1;
         margin: -5px;
         border-radius: inherit;
-        background: linear-gradient(to right, #FA7F25, #FDBE13);
+        // background: linear-gradient(to right, #FA7F25, #FDBE13);
         height: 10px;
     }
     .logo {
@@ -49,6 +49,17 @@ header {
         }
     }
 }
+.container {
+    padding: 2rem 0 0 0;
+}
+
+.wire-box {
+    background: lightGrey;
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    margin: 0 0 2rem 0;
+}
 
 a {
     &:hover {
@@ -58,13 +69,13 @@ a {
 
 main {
     height:100%;
-    left: 55px;
+  
     font-size: 14px;
     position: relative;
-    width: calc(100% - 55px);
+    width: 100%;
     
     &.login {
-        height: calc(100% - 112px);
+        // height: calc(100% - 112px);
     }
 
     .code-loading {
@@ -117,7 +128,7 @@ h5.modal-title {
         padding-top: 0;
 
         &.login {
-            height: calc(100% - 57px);
+            // height: calc(100% - 79px);
         }
     }
 }
@@ -144,9 +155,9 @@ h5.modal-title {
         -moz-transition: .3s ease-in-out;
         -o-transition: .3s ease-in-out;
         transition: .3s ease-in-out;
-        min-height: calc(100% - 57px);
-        width: calc(100% - 249px);
-        left: 249px;
+        // min-height: calc(100% - 57px);
+        // width: calc(100% - 249px);
+        // left: 249px;
         position: relative;
 
         &.active, &.login {
@@ -304,7 +315,7 @@ section {
 }
 
 .login {
-    height: 100%;
+    // height: calc(100% - 79px);
 
     .container {
         padding: 4rem 2rem;

@@ -51,51 +51,15 @@ router.get("/", middleware.isLoggedIn, function(req, res) {
     });
 });
 
-
-router.get("/nav-1", middleware.isLoggedIn, function(req, res) {
-    res.render("nav-1", {
+// REGISTER ROUTES
+router.get("/project-1", function(req, res) {
+    res.render("project-1", {
         version: pjson.version,
         admin: false,
-        user: req.user,
-        firstname: (firstname(req))
+        user: req.user
     });
 });
 
-router.get("/nav-1-5", middleware.isLoggedIn, function(req, res) {
-    res.render("nav-1-5", {
-        version: pjson.version,
-        admin: false,
-        user: req.user,
-        firstname: (firstname(req))
-    });
-});
-
-router.get("/nav-2", middleware.isLoggedIn, function(req, res) {
-    res.render("nav-2", {
-        version: pjson.version,
-        admin: false,
-        user: req.user,
-        firstname: (firstname(req))
-    });
-});
-
-router.get("/nav-3", middleware.isLoggedIn, function(req, res) {
-    res.render("nav-3", {
-        version: pjson.version,
-        admin: false,
-        user: req.user,
-        firstname: (firstname(req))
-    });
-});
-
-router.get("/nav-4", middleware.isLoggedIn, function(req, res) {
-    res.render("nav-4", {
-        version: pjson.version,
-        admin: false,
-        user: req.user,
-        firstname: (firstname(req))
-    });
-});
 
 
 // REGISTER ROUTES
