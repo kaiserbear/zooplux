@@ -6757,6 +6757,10 @@ footer {
     font-weight: bold;
     color: black;
     margin: 0.5rem 0; }
+    .arx .header h5 a {
+      background: none;
+      padding: 0;
+      font-size: 18px; }
     .arx .header h5:last-child {
       float: right; }
 

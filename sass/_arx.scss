@@ -9,6 +9,11 @@
 			font-weight: bold;
 			color: black;
 			margin: 0.5rem 0;
+			a {
+				background: none;
+				padding: 0;
+				font-size: 18px;
+			}
 			&:last-child {
 				float:right;
 			}

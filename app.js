@@ -115,5 +115,5 @@ function wrapAsync(fn) {
 app.listen(port, function() {
     // console.log("Kindred Guidelines Server Has Started!");
     // a console.log() which triggers Nodemon's "stdout" event 
-    console.log('UX Noths server listening on port ' + port);
+    console.log('Zoopla UX server listening on port ' + port);
 });
