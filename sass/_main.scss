@@ -1,56 +1,17 @@
 header {
-    height: 79px;
     width: 100%;
     display: block;
-    border-bottom: 1px solid #EBE7E2;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        z-index: -1;
-        margin: -5px;
-        border-radius: inherit;
-        // background: linear-gradient(to right, #FA7F25, #FDBE13);
-        height: 10px;
-    }
     .logo {
-        padding: 27px 0 0 35px;
-        display: block;
+        // padding: 27px 0 0 35px;
+        display: none;
+        margin: 0 0 1rem;
         img {
             width: 150px; 
         }
     }
-    ul {
-        position: absolute;
-        top: 35px;
-        right: 0; 
-        list-style: none;
-        font-family: 'swedbank_sansmedium', sans-serif;
-        li {
-            float:left;
-            margin-right: 1rem;
-            
-            a {
-                color: $brown;
-                text-decoration: none;
-                font-size: 14px;
-                span {
-                    display: none;
-                }
-                img {
-                    margin-right: 0.5rem;
-                    width: 15px;
-                    height: 17px;
-                }
-            }
-        }
-    }
 }
 .container {
-    padding: 2rem 0 0 0;
+    
 }
 
 .wire-box {
@@ -58,8 +19,14 @@ header {
     display: block;
     width: 100%;
     min-height: 300px;
-    margin: 0 0 2rem 0;
 }
+
+section {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 a {
     &:hover {
@@ -68,8 +35,6 @@ a {
 }
 
 main {
-    height:100%;
-  
     font-size: 14px;
     position: relative;
     width: 100%;
@@ -168,14 +133,6 @@ h5.modal-title {
 }
 
 
-section {
-    margin: 0 1rem;
-
-    section {
-        margin-bottom: 2rem;
-    }
-}
-
 .page--heading {
     padding: 120px 0 2rem 0;
     margin: 0;
@@ -235,6 +192,10 @@ section {
     h3 {
         font-weight: normal;
     }
+}
+
+.navbar {
+    display: block;
 }
 
 @include media-breakpoint-up(sm) {

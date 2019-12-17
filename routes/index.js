@@ -52,14 +52,29 @@ router.get("/", middleware.isLoggedIn, function(req, res) {
 });
 
 // REGISTER ROUTES
-router.get("/project-1", function(req, res) {
-    res.render("project-1", {
+router.get("/arx", function(req, res) {
+    res.render("arx", {
         version: pjson.version,
         admin: false,
         user: req.user
     });
 });
 
+router.get("/arx-onboard-native", function(req, res) {
+    res.render("arx-onboard-native", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-am", function(req, res) {
+    res.render("arx-onboard-am", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
 
 
 // REGISTER ROUTES
@@ -182,7 +197,7 @@ router.post('/forgot', function(req, res, next) {
             var mailOptions = {
                 to: user.username,
                 from: 'hello@kaiserbear.co.uk',
-                subject: 'UXNOTHS: Password Reset.',
+                subject: 'Zoopla UX: Password Reset.',
                 text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
                     'http://' + req.headers.host + '/reset/' + token + '\n\n' +

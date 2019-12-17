@@ -27,12 +27,20 @@
     </head>
     <body>
         <header>
+            <nav id="navbar" class="navbar navbar-light navbar-fixed-top">
             <a href="/" class="logo"><img src="/img/zoopla_logo.svg" alt="Zoopla Logo" /></a>
-            <ul>
-              <!--   <li>
-                    <a href="#"><img src="/img/navigation/customer-service.svg" alt="Home" /><span>Customer Service<span></a>
-                </li>
-                <li><a href="#"><img src="/img/navigation/reminder.svg" alt="Home" /><span>Reminders</span></a></li>
-                <li><a href="#"><img src="/img/navigation/user.svg" alt="Home" /><span>Name Namesson</span></a></li> -->
-            </ul>
+                <div class="nav-button-area">
+                    <button id="kx--menu__button" class="navbar-toggler kx--menu__button" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <% include ./nav %>
+                    </ul>
+                </div>
+            </nav>
         </header>
