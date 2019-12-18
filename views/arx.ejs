@@ -1,28 +1,122 @@
 <% include ./partials/header %>
 <% include ./partials/alerts %>
 
-<main id="main" class="arx">
+<main id="main" class="arx landing">
 
-    <div class="header">
-    <div class="container">
-            <div class="col-12">
-                <h5><a href="/arx">Zoopla</a></h5>
-                <h5>AdReach</h5>
+    <% include ./arx-header %>
+
+    <div class="intro">
+        <section>
+            <div class="container">
+                <div class="col-12">
+                    <div class="wire-box">
+                        <img src="/img/adReachExpress-logo.png" /.>
+                        <h2>Target home sellers in your local area</h2>
+                        <div class="video">
+                            <iframe width="511px" height="287px" src="https://www.youtube.com/embed/c0Nzue5LEXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                        <a href="/arx-onboard-native">Book Now</a>
+                        <ul>
+                            <li><img src="/img/jupix.png"></li>
+                            <li><img src="/img/alto.png"></li>
+                            <li><img src="/img/expert-agent.png"></li>
+                        </ul>
+                        <p>Exclusively for Alto, Jupix and Expert Agent customers.</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-
-    <section>
+        </section>
+     </div>
+     <section class="award">
         <div class="container">
-        <div class="col-12">
-                <div class="wire-box">
-                    <h2>What does AdReach Express do for you?</h2>
-                    <iframe width="100%" height="500" src="https://www.youtube.com/embed/c0Nzue5LEXc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="row">
+                <div class="col-12">
+                    <h3>AdReach is an award-winning lead generation product that allows Zoopla partners to promote their business and properties to Zoopla site visitors on Facebook and Instagram.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/target.png" />
+                    <h5>Choose your hyperlocal audience</h5>
+                    <p>Choose your target radius</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="/img/c-f.png" />
+                    <h5>Start your marketing campaign instantly</h5>
+                    <p>Using pre-defined Zoopla marketing templates your campaign will automatically broadcast across Facebook and Instagram.</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="/img/leads.png" />
+                    <h5>Leads captured via your personalised chatbot</h5>
+                    <p>Zoopla automatically generate a personalised chatbot experience to capture leads from your campaign.s</p>
+                </div>
+                <div class="col-12">
+                    <a href="/arx-onboard-native">Book Now</a>
                 </div>
             </div>
         </div>
     </section>
-    <section>
+    <section class="work">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h2>How does <strong>AdReach</strong> <i>Express</i> work?</h2>
+                    <h3>AdReach Express lets you target relevant Zoopla users in your area. </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>1. Choose your audience</h4>
+                    <p>Choose the area you'd like to target, and pinpoint relevant vendors to power your AdReach marketing campaign.</p>
+                    <p>Once your area targeting is selected, we build you a custom audience which is powered by Zoopla's unique data asset.</p>
+                </div>
+                <div class="col-md-8">
+                    <img src="/img/work-1.png" />
+                </div>
+            </div>
+          
+        </div>
+    </section>
+    <section class="work work-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <img src="/img/work-2.png" />
+                </div>
+                <div class="col-md-4">
+                    <h4>2. Advertise on Facebook & Instagram</h4>
+                    <p>Once your target audience leaves Zoopla and is now on Facebook or Instagram we will show them your bespoke ad.</p>
+                    <p>Your ad may appear in one of the following styles:</p>
+                    <p>
+                        <ul>
+                            <li>Facebook newsfeed</li>
+                            <li>Facebook stories</li>
+                            <li>Instagram newsfeed</li>
+                            <li>Instagram stories</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="work work-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="phone">
+                        <img src="/img/chatbot.gif" />
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4>Clicks driven to a personalised chat bot experience</h4>
+                    <p>The vendor clicks on your Facebook or Instagram campaign, they will be sent to a personalised chat bot experience.</p>
+                    <p>The co-branded chatbot will start a conversation with the user with the aim to capture a lead.</p>
+                    <p>Once a new lead is successfully captured the lead will be sent across instantly and securely</p>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!--  <section>
         <div class="container">
             <div class="col-12">
                     <ol>
@@ -35,19 +129,54 @@
                 </div>
             </div>
         </div>
-    </section>
-    <section>
+    </section> -->
+    <section class="package">
         <div class="container">
-            <div class="col-12">
-                <h5>What does it cost you?</h5>
-                <ol>
-                    <li>Package 1</li>
-                    <li>Package 2</li>
-                </ol>
-                <a href="/arx-onboard-native">Book Now</a>
+            <div class="row">
+                <div class="col-12">
+                    <h2>Choose your package</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-3 offset-md-3 first">
+                    <img src="/img/cal.png">
+                    <span>Subscription</span>
+                    <div class="pink">
+                        <ul>
+                            <li>6 months</li>
+                            <li>80* clicks for £200 p/m</li>
+                            <li>200* clicks for £425 p/m</li>
+                            <li>300* clicks for £600 p/m</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 second">
+                    <img src="/img/cal.png">
+                    <span>Premium Subscription</span>
+                    <div class="pink">
+                        <img src="/img/star.png">
+                        <ul>
+                            <li>12 months</li>
+                            <li>120* clicks for £200 p/m</li>
+                            <li>300* clicks for £425 p/m</li>
+                            <li>450* clicks for £600 p/m</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="/arx-onboard-native">Book Now</a>
+                    <div class="terms">
+                        <sub>Subscriptions can be canceled with 30 days written notice once the minimum term has completed. Your ad creative and target audience can be changed at anytime by editing your booking.</sub>
+                        <sub>* This is an indicative monthly average. There may some variations between months due to seasonality but the absolute number of clicks per subscription term will be delivered by the end of the subscription term.</sub>
+                        <sub>(Prices do not include VAT)</sub>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
 
     <section class="footer">
         <div class="container">

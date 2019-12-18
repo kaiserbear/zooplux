@@ -10,12 +10,17 @@ header {
         }
     }
 }
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
 .container {
     
 }
 
 .wire-box {
-    background: lightGrey;
+    // background: lightGrey;
     display: block;
     width: 100%;
     min-height: 300px;
@@ -244,7 +249,7 @@ h5.modal-title {
 
 .submitted {
     color: #a9a9a9;
-    font-family: helvetica;
+    font-family: arial;
     font-weight: 300;
 
     strong {

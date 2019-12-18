@@ -6267,25 +6267,11 @@ a.text-dark:hover, a.text-dark:focus {
 .invisible {
   visibility: hidden !important; }
 
-@font-face {
-  font-family: 'swedbank_headlinebold';
-  src: url("../fonts/swedbankheadline-bold-webfont.woff2") format("woff2"), url("../fonts/swedbankheadline-bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
-@font-face {
-  font-family: 'swedbank_sansmedium';
-  src: url("../fonts/swedbanksans-medium-webfont.woff2") format("woff2"), url("../fonts/swedbanksans-medium-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal; }
-
 html, body {
   height: 100%; }
 
-body {
-  font-family: 'Open Sans', sans-serif; }
-  body .modal-backdrop {
-    z-index: 20; }
+body .modal-backdrop {
+  z-index: 20; }
 
 button {
   cursor: pointer; }
@@ -6293,13 +6279,7 @@ button {
     outline: 0; }
 
 a {
-  color: #6A14AE;
   text-decoration: underline; }
-
-h1, h2, h3, h4, h5 {
-  font-weight: inherit;
-  font-family: 'swedbank_sansmedium', sans-serif;
-  color: #6A14AE; }
 
 h1 {
   font-size: 45px;
@@ -6535,8 +6515,10 @@ header {
     header .logo img {
       width: 150px; }
 
+body {
+  font-family: 'Lato', sans-serif; }
+
 .wire-box {
-  background: lightGrey;
   display: block;
   width: 100%;
   min-height: 300px; }
@@ -6666,7 +6648,7 @@ h5.modal-title {
 
 .submitted {
   color: #a9a9a9;
-  font-family: helvetica;
+  font-family: arial;
   font-weight: 300; }
   .submitted strong {
     font-weight: 900; }
@@ -6747,15 +6729,148 @@ footer {
   .main {
     padding: 2rem 0; } }
 
+@media (min-width: 992px) {
+  .arx .intro ul li {
+    display: inline-block; } }
+
+.arx .intro {
+  background-image: url(/img/landing-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed; }
+  .arx .intro section {
+    background: rgba(0, 0, 0, 0.55);
+    height: 100%; }
+  .arx .intro h2 {
+    color: white;
+    font-size: 36px;
+    margin: 0 0 2rem 0; }
+  .arx .intro .video {
+    margin: 0 0 2rem 0; }
+    .arx .intro .video iframe {
+      max-width: 100%; }
+  .arx .intro ul {
+    margin: 0 auto 2rem auto;
+    padding: 0;
+    width: max-content; }
+    .arx .intro ul li img {
+      max-width: 200px; }
+  .arx .intro a {
+    margin: 0 0 2rem 0; }
+  .arx .intro p {
+    color: white;
+    text-align: center; }
+
+.arx .award {
+  background: white;
+  padding: 5rem 0; }
+  .arx .award h5, .arx .award h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 0 1rem; }
+  .arx .award img {
+    margin-bottom: 1rem;
+    max-width: 100%; }
+  .arx .award p {
+    text-align: center;
+    color: gray;
+    font-weight: 100; }
+
+.arx .work {
+  background: #f1f1f7;
+  padding: 5rem 0; }
+  .arx .work h2, .arx .work h3 {
+    margin: 0 0 1rem;
+    padding: 0; }
+  .arx .work h2 {
+    font-weight: 400; }
+  .arx .work h3 {
+    font-size: 18px; }
+  .arx .work h4 {
+    text-align: left; }
+  .arx .work p {
+    color: gray;
+    font-weight: 100; }
+  .arx .work .row {
+    margin: 0 0 2rem; }
+  .arx .work img {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #ccc;
+    border-radius: 4px;
+    max-width: 100%; }
+
+.arx .work-2 {
+  background: white; }
+  .arx .work-2 ul li {
+    font-weight: 100;
+    color: gray; }
+  .arx .work-2 img {
+    border: none; }
+  .arx .work-2 .phone {
+    background-image: url(/img/iphone.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 4rem 3.4rem; }
+    .arx .work-2 .phone img {
+      height: 412px;
+      width: 235px;
+      margin-left: 15px;
+      margin-top: -3px; }
+
+.arx .package {
+  background: #50086e; }
+  .arx .package h2 {
+    color: white;
+    font-weight: 400; }
+  .arx .package .row {
+    margin: 0 0 2rem 0; }
+  .arx .package span {
+    color: white;
+    font-weight: 100;
+    font-size: 24px;
+    display: inline-block;
+    width: 100%; }
+  .arx .package .terms {
+    margin: 3rem 0;
+    color: white; }
+  .arx .package .first, .arx .package .second {
+    text-align: center;
+    margin-bottom: 2rem; }
+    .arx .package .first img, .arx .package .second img {
+      margin: 0 auto;
+      display: inline-block; }
+    .arx .package .first span, .arx .package .second span {
+      margin: 0 0 2rem 0; }
+    .arx .package .first ul, .arx .package .second ul {
+      list-style: none;
+      padding: 1rem;
+      margin: 0; }
+      .arx .package .first ul li, .arx .package .second ul li {
+        color: white;
+        font-size: 14px; }
+        .arx .package .first ul li:first-child, .arx .package .second ul li:first-child {
+          text-align: center;
+          margin: 0 0 3rem 0; }
+    .arx .package .first .pink, .arx .package .second .pink {
+      display: inline-block; }
+  .arx .package .first {
+    margin-top: 2.8rem; }
+    .arx .package .first .pink {
+      background-color: rgba(226, 29, 108, 0.7); }
+  .arx .package .second .pink {
+    background-color: rgba(226, 29, 108, 0.95); }
+
 .arx .header {
   width: 100%;
   height: 50px;
-  background: grey; }
+  background: #50086e;
+  height: 61px;
+  padding: 10px 0 0 0; }
   .arx .header h5 {
     display: inline-block;
     font-size: 18px;
     font-weight: bold;
-    color: black;
+    color: white;
     margin: 0.5rem 0; }
     .arx .header h5 a {
       background: none;
@@ -6763,6 +6878,9 @@ footer {
       font-size: 18px; }
     .arx .header h5:last-child {
       float: right; }
+  .arx .header img.logo {
+    width: 89px;
+    height: 23px; }
 
 .arx .form {
   background: #F6F6F6;
@@ -6782,8 +6900,7 @@ footer {
     font-style: italic;
     font-size: 16px; }
   .arx .form a {
-    font-size: 16px;
-    background: #C4C4C4; }
+    font-size: 16px; }
   .arx .form label {
     width: 100%;
     color: #7E7E7E;
@@ -6798,14 +6915,9 @@ footer {
     margin-right: 1rem; }
 
 .arx section {
-  background: #E2E2E2;
   padding: 2rem;
   text-align: center;
   font-size: 16px; }
-  .arx section:nth-child(3) {
-    background: #C4C4C4; }
-  .arx section:nth-child(4) {
-    background: #FCFBFB; }
   .arx section ol, .arx section ul {
     text-align: left; }
     .arx section ol li, .arx section ul li {
@@ -6822,16 +6934,17 @@ footer {
       color: white; }
 
 .arx a {
-  border-radius: 5px;
-  background: #898989;
+  border-radius: 10px;
+  background: #ff5722;
   text-decoration: none;
   padding: 1rem;
   display: inline-block;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
-  color: black; }
+  color: white;
+  min-width: 150px;
+  text-align: center; }
   .arx a.switch-user {
     float: right;
     font-size: 16px;
-    background: #C4C4C4;
     margin: 2rem 0 0; }
