@@ -61,7 +61,7 @@ router.get("/arx", function(req, res) {
 });
 
 router.get("/arx-onboard-native", function(req, res) {
-    res.render("arx-onboard-native", {
+    res.render("./arx/arx-onboard-native", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -69,7 +69,7 @@ router.get("/arx-onboard-native", function(req, res) {
 });
 
 router.get("/arx-onboard-am", function(req, res) {
-    res.render("arx-onboard-am", {
+    res.render("./arx/arx-onboard-am", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -77,7 +77,7 @@ router.get("/arx-onboard-am", function(req, res) {
 });
 
 router.get("/arx-onboard-native-check", function(req, res) {
-    res.render("arx-onboard-native-check", {
+    res.render("./arx/arx-onboard-native-check", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -85,7 +85,7 @@ router.get("/arx-onboard-native-check", function(req, res) {
 });
 
 router.get("/arx-onboard-am-check", function(req, res) {
-    res.render("arx-onboard-am-check", {
+    res.render("./arx/arx-onboard-am-check", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -93,7 +93,7 @@ router.get("/arx-onboard-am-check", function(req, res) {
 });
 
 router.get("/arx-onboard-native-customer-check", function(req, res) {
-    res.render("arx-onboard-native-customer-check", {
+    res.render("./arx/arx-onboard-native-customer-check", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -101,7 +101,7 @@ router.get("/arx-onboard-native-customer-check", function(req, res) {
 });
 
 router.get("/arx-onboard-am-customer-found", function(req, res) {
-    res.render("arx-onboard-am-customer-found", {
+    res.render("./arx/arx-onboard-am-customer-found", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -109,7 +109,7 @@ router.get("/arx-onboard-am-customer-found", function(req, res) {
 });
 
 router.get("/arx-onboard-am-customer-check", function(req, res) {
-    res.render("arx-onboard-am-customer-check", {
+    res.render("./arx/arx-onboard-am-customer-check", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -117,7 +117,7 @@ router.get("/arx-onboard-am-customer-check", function(req, res) {
 });
 
 router.get("/arx-onboard-am-build-campaign", function(req, res) {
-    res.render("arx-onboard-am-build-campaign", {
+    res.render("./arx/arx-onboard-am-build-campaign", {
         version: pjson.version,
         admin: false,
         user: req.user

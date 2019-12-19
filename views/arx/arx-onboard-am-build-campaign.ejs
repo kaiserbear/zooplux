@@ -1,0 +1,79 @@
+<% include ../partials/header %>
+<% include ../partials/alerts %>
+
+<main id="main" class="arx">
+
+    <% include ./arx-header-welcome %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1">
+                <div class="form">
+                    <h3>Build Jay's Campaign</h3>
+                    <h5>Package</h5>
+                    <div class="form-row">
+                        <div class="col-6">
+                            <label for="6months">6 months</label>
+                            <input type="checkbox" name="6months" checked />
+                        </div>
+                        <div class="col-6">
+                            <label for="12months">12 months</label>
+                            <input type="checkbox" name="12months" />
+                        </div>
+                    </div>
+                    <hr />
+                    <br />
+                    <h5>Logo</h5>
+                    <div class="form-row">
+                        <div>
+                            <img src="/img/customer-logo.png" />
+                        </div>
+                        <a class="button right" href="#">Change</a>
+                    </div>
+                    <br />
+                    <h5>Property Image</h5>
+                    <p>We think this is your best property image.</p>
+                    <div class="form-row">
+                        <div>
+                            <img src="/img/prop-image.png" />
+                        </div>
+                        <a class="button right" href="#">Change</a>
+                    </div>
+                    <br />
+                    <h5>Select Area</h5>
+                    <div class="form-row">
+                        <label>Outcode</label>
+                        <input type="text" name="" placeholder="e.g. EN5" />
+                    </div>
+                    <h5>Area Targeting</h5>
+                    <div class="form-row">
+                        <div class="col-4">
+                            <label for="5km">5km</label>
+                            <input type="checkbox" name="5km" checked />
+                        </div>
+                        <div class="col-4">
+                            <label for="10km">10km</label>
+                            <input type="checkbox" name="10km" />
+                        </div>
+                        <div class="col-4">
+                            <label for="15km">15km</label>
+                            <input type="checkbox" name="15km" />
+                        </div>
+                    </div>
+                    <a class="button right" href="#">Continue</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+     <section class="footer">
+        <div class="container">
+            <div class="col-12">
+                <h5>Footer</h5>
+            </div>
+        </div>
+    </section>
+
+
+<% include ../partials/footer %>

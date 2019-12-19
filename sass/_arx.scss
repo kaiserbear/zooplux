@@ -259,6 +259,10 @@ $orange: #ff5722;
 		input:[type="text"]:disabled {
 			background-color: #dddddd;
 		}
+		.button {
+			display: inline-table;
+			margin-left: auto;
+		}
 	}
 	section {
 		padding: 2rem;

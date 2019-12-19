@@ -1,5 +1,5 @@
-<% include ./partials/header %>
-<% include ./partials/alerts %>
+<% include ../partials/header %>
+<% include ../partials/alerts %>
 
 <main id="main" class="arx">
 
@@ -8,9 +8,14 @@
     <div class="container">
         <div class="row">
             <div class="col-12 col-md-10 offset-md-1">
+                 <a class="switch-user button" href="/arx-onboard-native">Return to customer sign in</a>
                 <div class="form">
                     <h3>Purchase AdReach Express</h3>
-                    <p>We’ve sent an email to yourname@yourbranch.com please check your email for a <a href="#">link</a> to continue.</p>
+                    <h5>Account Manager Email</h5>
+                    <div class="form-row">
+                        <input type="text" name="" placeholder="e.g. yourname@zoopla.co.uk" />
+                        <a class="button" href="/arx-onboard-am-check">Submit</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -26,4 +31,4 @@
     </section>
 
 
-<% include partials/footer %>
+<% include ../partials/footer %>

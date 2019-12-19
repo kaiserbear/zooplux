@@ -6920,6 +6920,9 @@ footer {
     margin-right: 1rem; }
   .arx .form :disabled {
     background-color: #dddddd; }
+  .arx .form .button {
+    display: inline-table;
+    margin-left: auto; }
 
 .arx section {
   padding: 2rem;
