@@ -6887,9 +6887,10 @@ footer {
   padding: 4rem;
   margin: 5rem 0;
   display: inline-block;
-  width: 100%; }
+  width: 100%;
+  input: [type= "text"]; }
   .arx .form .form-row {
-    margin: 2rem 0;
+    margin: 1rem 0;
     padding: 0; }
   .arx .form h3 {
     font-weight: bold;
@@ -6901,6 +6902,10 @@ footer {
     font-size: 16px; }
   .arx .form a {
     font-size: 16px; }
+  .arx .form select {
+    min-width: 300px;
+    margin-right: 1rem;
+    background: white; }
   .arx .form label {
     width: 100%;
     color: #7E7E7E;
@@ -6913,6 +6918,8 @@ footer {
     border-radius: 5px;
     min-width: 50%;
     margin-right: 1rem; }
+  .arx .form :disabled {
+    background-color: #dddddd; }
 
 .arx section {
   padding: 2rem;
@@ -6934,17 +6941,21 @@ footer {
       color: white; }
 
 .arx a {
-  border-radius: 10px;
-  background: #ff5722;
-  text-decoration: none;
-  padding: 1rem;
-  display: inline-block;
-  font-size: 16px;
-  font-weight: bold;
-  color: white;
-  min-width: 150px;
-  text-align: center; }
+  color: #ff5722; }
+  .arx a.button {
+    border-radius: 10px;
+    background: #ff5722;
+    text-decoration: none;
+    padding: 1rem;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    min-width: 150px;
+    text-align: center; }
   .arx a.switch-user {
     float: right;
     font-size: 16px;
     margin: 2rem 0 0; }
+  .arx a.right {
+    float: right; }

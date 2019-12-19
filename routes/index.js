@@ -92,6 +92,38 @@ router.get("/arx-onboard-am-check", function(req, res) {
     });
 });
 
+router.get("/arx-onboard-native-customer-check", function(req, res) {
+    res.render("arx-onboard-native-customer-check", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-am-customer-found", function(req, res) {
+    res.render("arx-onboard-am-customer-found", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-am-customer-check", function(req, res) {
+    res.render("arx-onboard-am-customer-check", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-am-build-campaign", function(req, res) {
+    res.render("arx-onboard-am-build-campaign", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
 
 // REGISTER ROUTES
 router.get("/register", function(req, res) {
