@@ -6518,6 +6518,12 @@ header {
 body {
   font-family: 'Lato', sans-serif; }
 
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 2rem 0;
+  min-height: 200px; }
+
 .wire-box {
   display: block;
   width: 100%;
@@ -6775,6 +6781,13 @@ footer {
     color: gray;
     font-weight: 100; }
 
+.arx .facebook-preview {
+  background-image: url(/img/facebook-preview.png);
+  height: 388px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 2rem 0; }
+
 .arx .work {
   background: #f1f1f7;
   padding: 5rem 0; }
@@ -6934,6 +6947,14 @@ footer {
       color: white; }
 
 .arx a {
+  font-size: 16px;
+  color: #ff5722; }
+
+.arx .right {
+  float: right;
+  margin-left: auto; }
+
+.arx .button {
   border-radius: 10px;
   background: #ff5722;
   text-decoration: none;
@@ -6944,7 +6965,7 @@ footer {
   color: white;
   min-width: 150px;
   text-align: center; }
-  .arx a.switch-user {
+  .arx .button.switch-user {
     float: right;
     font-size: 16px;
     margin: 2rem 0 0; }

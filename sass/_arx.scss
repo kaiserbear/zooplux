@@ -66,6 +66,13 @@
 			font-weight: 100;
 		}
 	}
+	.facebook-preview {
+		background-image: url(/img/facebook-preview.png);
+		height: 388px;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin: 2rem 0;
+	}
 	.work {
 		background: rgba(241,241,247,1);
 		padding: 5rem 0;
@@ -275,6 +282,15 @@
 		}
 	}
 	a {
+		font-size: 16px;
+		// font-weight: bold;
+		color: #ff5722;
+	}
+	.right {
+		float:right;
+		margin-left: auto;
+	}
+	.button {
 		border-radius: 10px;
 		background: #ff5722;
 		text-decoration: none;
