@@ -125,7 +125,7 @@ router.get("/arx-onboard-am-build-campaign", function(req, res) {
 });
 
 router.get("/arx-onboard-signing", function(req, res) {
-    res.render("arx-onboard-signing", {
+    res.render("./arx/arx-onboard-signing", {
         version: pjson.version,
         admin: false,
         user: req.user
@@ -133,7 +133,15 @@ router.get("/arx-onboard-signing", function(req, res) {
 });
 
 router.get("/arx-onboard-preview", function(req, res) {
-    res.render("arx-onboard-preview", {
+    res.render("./arx/arx-onboard-preview", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-complete", function(req, res) {
+    res.render("./arx/arx-complete", {
         version: pjson.version,
         admin: false,
         user: req.user
