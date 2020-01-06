@@ -68,6 +68,13 @@ $orange: #ff5722;
 			font-weight: 100;
 		}
 	}
+	.facebook-preview {
+		background-image: url(/img/facebook-preview.png);
+		height: 388px;
+		background-repeat: no-repeat;
+		background-position: center;
+		margin: 2rem 0;
+	}
 	.work {
 		background: rgba(241,241,247,1);
 		padding: 5rem 0;
@@ -255,9 +262,9 @@ $orange: #ff5722;
 			border-radius: 5px;
 			min-width: 50%;
 			margin-right: 1rem;
-		}
-		input:[type="text"]:disabled {
-			background-color: #dddddd;
+			&[type="text"]:disabled {
+				background-color: #dddddd;
+			}
 		}
 		.button {
 			display: inline-table;

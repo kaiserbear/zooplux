@@ -6518,6 +6518,12 @@ header {
 body {
   font-family: 'Lato', sans-serif; }
 
+textarea {
+  width: 100%;
+  padding: 1rem;
+  margin: 2rem 0;
+  min-height: 200px; }
+
 .wire-box {
   display: block;
   width: 100%;
@@ -6775,6 +6781,13 @@ footer {
     color: gray;
     font-weight: 100; }
 
+.arx .facebook-preview {
+  background-image: url(/img/facebook-preview.png);
+  height: 388px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 2rem 0; }
+
 .arx .work {
   background: #f1f1f7;
   padding: 5rem 0; }
@@ -6887,8 +6900,7 @@ footer {
   padding: 4rem;
   margin: 5rem 0;
   display: inline-block;
-  width: 100%;
-  input: [type= "text"]; }
+  width: 100%; }
   .arx .form .form-row {
     margin: 1rem 0;
     padding: 0; }
@@ -6918,8 +6930,8 @@ footer {
     border-radius: 5px;
     min-width: 50%;
     margin-right: 1rem; }
-  .arx .form :disabled {
-    background-color: #dddddd; }
+    .arx .form input[type="text"]:disabled {
+      background-color: #dddddd; }
   .arx .form .button {
     display: inline-table;
     margin-left: auto; }

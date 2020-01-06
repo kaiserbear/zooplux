@@ -124,6 +124,21 @@ router.get("/arx-onboard-am-build-campaign", function(req, res) {
     });
 });
 
+router.get("/arx-onboard-signing", function(req, res) {
+    res.render("arx-onboard-signing", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-preview", function(req, res) {
+    res.render("arx-onboard-preview", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
 
 // REGISTER ROUTES
 router.get("/register", function(req, res) {
