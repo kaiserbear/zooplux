@@ -33,19 +33,13 @@ passport.deserializeUser(function(id, done) {
 });
 
 
-passport.use(new LocalStrategy(function(username, password, done) {
+passport.use(new LocalStrategy(function(username, done) {
+  
   User.findOne({ username: username }, function(err, user) {
     if (err) return done(err);
     if (!user) {
       return done(null, false, { message: 'Sorry, we don\'t recognise that email address' });
     }
-    user.comparePassword(password, function(err, isMatch) {
-      if (isMatch) {
-        return done(null, user);
-      } else {
-        return done(null, false, { message: 'Sorry, that password is incorrect.' });
-      }
-    });
   });
 }));
 

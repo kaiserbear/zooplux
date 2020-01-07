@@ -196,26 +196,54 @@ router.get("/login", function(req, res) {
     });
 });
 
-router.post('/login', function(req, res, next) {
+router.get("/verify/:user", function(req, res, next) {
 
-    passport.authenticate('local', {
-
-        failureFlash: true
-
-    }, function(err, user, info) {
-
-        if (err) return next(err)
-        if (!user) {
-            req.flash("error", info.message);
-            return res.redirect('/login');
+    async.waterfall([
+        function(done) {
+            user.findOne({
+                username: req.params.user
+            }, function(err, user) {
+                if (!user) {
+                    req.flash('error', 'No account with that email address exists.');
+                    return res.redirect('/login');
+                }
+                else {
+                    req.logIn(user, function(err) {
+                        if (err) {
+                            console.log(err)
+                        } else {
+                            req.flash('success', 'Welcome ' + user.username);
+                            return res.redirect('/');
+                        }
+                    });
+                }
+            });
         }
-        req.logIn(user, function(err) {
-            if (err) return next(err);
-            req.flash("success", 'Welcome back ' + user.username);
-            return res.redirect('/');
-        });
-    })(req, res, next);
+    ], function(err, done) {
+        if (err) {} else {
+            res.redirect('/');
+            done();
+        }
+
+    });
 });
+
+// router.post('/login', function(req, res, next) {
+    // passport.authenticate('local', {
+    //     failureFlash: true
+    // }, function(err, user, info) {
+    //     if (err) return next(err)
+    //     if (!user) {
+    //         req.flash("error", info.message);
+    //         return res.redirect('/login');
+    //     }
+    //     req.logIn(user, function(err) {
+    //         if (err) return next(err);
+    //         req.flash("success", 'Welcome back ' + user.username);
+    //         return res.redirect('/');
+    //     });
+    // })(req, res, next);
+// });
 
 // LOGOUT ROUTE
 router.get("/logout", function(req, res) {
@@ -234,29 +262,25 @@ router.get("/forgot", function(req, res) {
 });
 
 router.post('/forgot', function(req, res, next) {
+
     async.waterfall([
         function(done) {
-            crypto.randomBytes(20, function(err, buf) {
-                var token = buf.toString('hex');
-                done(err, token);
-            });
-        },
-        function(token, done) {
             user.findOne({
                 username: req.body.username
             }, function(err, user) {
-                if (!user) {
+                if (user == null) {
                     req.flash('error', 'No account with that email address exists.');
-                    return res.redirect('/forgot');
+                    return res.redirect('/login');
                 }
-                user.resetPasswordToken = token;
-                user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
-                user.save(function(err) {
-                    done(err, token, user);
-                });
+                else if (user === null) {
+                    console.log('catch');
+                }
+                else {
+                    done(err,user);
+                }
             });
         },
-        function(token, user, done) {
+        function(user, done) {
             var smtpTransport = nodemailer.createTransport({
                 service: 'gmail',
                 host: 'smtp.gmail.com',
@@ -271,170 +295,27 @@ router.post('/forgot', function(req, res, next) {
                 subject: 'Zoopla UX: Password Reset.',
                 text: 'You are receiving this because you (or someone else) have requested the reset of the password for your account.\n\n' +
                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-                    'http://' + req.headers.host + '/arx-onboard-am-signup/' + token + '\n\n' +
-                    'If you did not request this, please ignore this email and your password will remain unchanged.\n'
+                    'http://' + req.headers.host + '/verify/' + user.username + '\n\n' +
+                    'If you did not request this, please contact Zoopla ARX team.\n'
             };
             smtpTransport.sendMail(mailOptions, function(err) {
                 if (err) {
                     console.log(err);
                 } else {
-                    req.flash('success', 'We\'ve sent an email to ' + user.username);
                     done();
                 }
             });
         }
     ], function(err, done) {
         if (err) {} else {
-            res.redirect('/forgot');
+            req.flash('success', 'Success, please check your email.');
+            res.redirect('/login');
             done();
         }
 
     });
 });
 
-// RESET ROUTES
-router.get('/reset/:token', function(req, res) {
-    user.findOne({
-        resetPasswordToken: req.params.token,
-        resetPasswordExpires: {
-            $gt: Date.now()
-        }
-    }, function(err, user) {
-        if (!user) {
-            req.flash('error', 'Password reset token is invalid or has expired.');
-            return res.redirect('/forgot');
-        }
-        res.render('reset', {
-            admin: false,
-            user: req.user,
-            version: pjson.version
-        });
-    });
-});
-
-router.post('/reset/:token', function(req, res) {
-    async.waterfall([
-        function(done) {
-            user.findOne({
-                resetPasswordToken: req.params.token,
-                resetPasswordExpires: {
-                    $gt: Date.now()
-                }
-            }, function(err, user) {
-                if (!user) {
-                    req.flash('error', 'Password reset token is invalid or has expired.');
-                    return res.redirect('back');
-                }
-
-                user.password = req.body.password;
-                user.resetPasswordToken = undefined;
-                user.resetPasswordExpires = undefined;
-
-                user.save(function(err) {
-                    req.logIn(user, function(err) {
-                        if (err) {
-                            console.log(err)
-                        } else {
-                            req.flash('success', 'Password changed for ' + user.username);
-                            done(user);
-                        }
-                    });
-                });
-            });
-        },
-
-        function(user, done) {
-
-            var smtpTransport = nodemailer.createTransport('SMTP', {
-                service: 'gmail',
-                host: 'smtp.gmail.com',
-                auth: {
-                    user: email_user,
-                    pass: email_password
-                }
-            });
-            var mailOptions = {
-                to: user.username,
-                from: 'hello@kaiserbear.co.uk',
-                subject: 'UXNOTHS: your password has been changed.',
-                text: 'Hello,\n\n' +
-                    'This is a confirmation that the password for your account ' + user.username + ' has just been changed.\n'
-            };
-            smtpTransport.sendMail(mailOptions, function(err) {
-                if (err) {
-                    console.log(err)
-                } else {
-                    req.flash('success', 'Success! Your password has been changed.');
-                    done(user);
-                }
-            });
-        }
-    ], function(err) {
-        res.redirect('/');
-    });
-});
-
-router.get('/sign-s3', (req, res) => {
-
-    // S3 Bucket Config
-    const s3 = new aws.S3();
-    const fileName = req.query['file-name'];
-    const fileType = req.query['file-type'];
-    const s3Params = {
-        Bucket: S3_BUCKET,
-        Key: fileName,
-        Expires: 60,
-        ContentType: fileType,
-        ACL: 'public-read'
-    };
-    console.log(aws.config);
-    aws.config.region = 'eu-west-2';
-    s3.getSignedUrl('putObject', s3Params, (err, data) => {
-        if (err) {
-            console.log(err);
-            return res.end();
-        }
-        const returnData = {
-            signedRequest: data,
-            url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
-        };
-        res.write(JSON.stringify(returnData));
-        console.log(returnData);
-        res.end();
-    });
-});
-
-
-// Upload Image S3 Token generator.
-router.get('/upload_image', middleware.isLoggedIn, function(req, res) {
-    // Froala S3 Set Up
-    var configs = {
-        bucket: process.env.S3_BUCKET,
-        region: 'eu-west-2',
-        keyStart: 'uploads',
-        acl: 'public-read',
-        accessKey: process.env.AWS_ACCESS_KEY_ID,
-        secretKey: process.env.AWS_SECRET_ACCESS_KEY
-    }
-    var s3Hash = FroalaEditor.S3.getHash(configs);
-    res.send(s3Hash);
-});
-
-router.get('/get_bucket_list', middleware.isLoggedIn, (req, res) => {
-
-    // S3 Bucket Config
-    const s3 = new aws.S3();
-    const fileName = req.query['file-name'];
-    const fileType = req.query['file-type'];
-    const s3Params = {
-        Bucket: process.env.S3_BUCKET
-    };
-    aws.config.region = 'eu-west-2';
-    s3.listObjects(s3Params, function(err, data) {
-        if (err) throw err;
-        res.send(data.Contents);
-    });
-});
 
 
 module.exports = router;
