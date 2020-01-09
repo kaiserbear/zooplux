@@ -116,8 +116,24 @@ router.get("/arx-onboard-am-customer-check", function(req, res) {
     });
 });
 
-router.get("/arx-onboard-am-build-campaign", function(req, res) {
-    res.render("./arx/arx-onboard-am-build-campaign", {
+router.get("/arx-onboard-campaign-builder", function(req, res) {
+    res.render("./arx/arx-onboard-campaign-builder", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-campaign-package", function(req, res) {
+    res.render("./arx/arx-onboard-campaign-package", {
+        version: pjson.version,
+        admin: false,
+        user: req.user
+    });
+});
+
+router.get("/arx-onboard-campaign-targeting", function(req, res) {
+    res.render("./arx/arx-onboard-campaign-targeting", {
         version: pjson.version,
         admin: false,
         user: req.user

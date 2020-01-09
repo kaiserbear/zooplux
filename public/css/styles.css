@@ -6769,7 +6769,8 @@ footer {
 .arx .award {
   background: white;
   padding: 5rem 0; }
-  .arx .award h5, .arx .award h3 {
+  .arx .award h5,
+  .arx .award h3 {
     font-size: 18px;
     font-weight: 400;
     margin: 0 0 1rem; }
@@ -6791,7 +6792,8 @@ footer {
 .arx .work {
   background: #f1f1f7;
   padding: 5rem 0; }
-  .arx .work h2, .arx .work h3 {
+  .arx .work h2,
+  .arx .work h3 {
     margin: 0 0 1rem;
     padding: 0; }
   .arx .work h2 {
@@ -6846,25 +6848,32 @@ footer {
   .arx .package .terms {
     margin: 3rem 0;
     color: white; }
-  .arx .package .first, .arx .package .second {
+  .arx .package .first,
+  .arx .package .second {
     text-align: center;
     margin-bottom: 2rem; }
-    .arx .package .first img, .arx .package .second img {
+    .arx .package .first img,
+    .arx .package .second img {
       margin: 0 auto;
       display: inline-block; }
-    .arx .package .first span, .arx .package .second span {
+    .arx .package .first span,
+    .arx .package .second span {
       margin: 0 0 2rem 0; }
-    .arx .package .first ul, .arx .package .second ul {
+    .arx .package .first ul,
+    .arx .package .second ul {
       list-style: none;
       padding: 1rem;
       margin: 0; }
-      .arx .package .first ul li, .arx .package .second ul li {
+      .arx .package .first ul li,
+      .arx .package .second ul li {
         color: white;
         font-size: 14px; }
-        .arx .package .first ul li:first-child, .arx .package .second ul li:first-child {
+        .arx .package .first ul li:first-child,
+        .arx .package .second ul li:first-child {
           text-align: center;
           margin: 0 0 3rem 0; }
-    .arx .package .first .pink, .arx .package .second .pink {
+    .arx .package .first .pink,
+    .arx .package .second .pink {
       display: inline-block; }
   .arx .package .first {
     margin-top: 2.8rem; }
@@ -6896,7 +6905,7 @@ footer {
     height: 23px; }
 
 .arx .form {
-  background: #F6F6F6;
+  background: #f6f6f6;
   padding: 4rem;
   margin: 5rem 0;
   display: inline-block;
@@ -6907,11 +6916,14 @@ footer {
   .arx .form h3 {
     font-weight: bold;
     margin: 0 0 3rem;
-    padding: 0; }
+    padding: 0;
+    color: #50086e;
+    text-align: center; }
   .arx .form h5 {
     font-weight: bold;
     font-style: italic;
-    font-size: 16px; }
+    font-size: 16px;
+    color: #50086e; }
   .arx .form a {
     font-size: 16px; }
   .arx .form select {
@@ -6920,9 +6932,10 @@ footer {
     background: white; }
   .arx .form label {
     width: 100%;
-    color: #7E7E7E;
+    color: #7e7e7e;
     margin: 0 0 1rem; }
-  .arx .form input, .arx .form label {
+  .arx .form input,
+  .arx .form label {
     display: inline-block; }
   .arx .form input {
     padding: 1rem;
@@ -6932,6 +6945,48 @@ footer {
     margin-right: 1rem; }
     .arx .form input[type="text"]:disabled {
       background-color: #dddddd; }
+    .arx .form input.slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 15px;
+      border-radius: 5px;
+      background: #d3d3d3;
+      outline: none;
+      opacity: 0.7;
+      -webkit-transition: .2s;
+      transition: opacity .2s;
+      border: none;
+      padding: 0; }
+      .arx .form input.slider:hover {
+        opacity: 1; }
+      .arx .form input.slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background: grey;
+        cursor: pointer;
+        border-radius: 50%; }
+      .arx .form input.slider::-moz-range-thumb {
+        width: 25px;
+        height: 25px;
+        background: grey;
+        cursor: pointer;
+        border-radius: 50%; }
+  .arx .form .slider-defs {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    margin: 0 auto;
+    display: inline-block;
+    position: relative;
+    text-align: center; }
+    .arx .form .slider-defs li {
+      display: inline-block;
+      text-align: center;
+      width: auto;
+      min-width: 150px;
+      padding: 1rem 0; }
   .arx .form .button {
     display: inline-table;
     margin-left: auto; }
@@ -6940,9 +6995,11 @@ footer {
   padding: 2rem;
   text-align: center;
   font-size: 16px; }
-  .arx section ol, .arx section ul {
+  .arx section ol,
+  .arx section ul {
     text-align: left; }
-    .arx section ol li, .arx section ul li {
+    .arx section ol li,
+    .arx section ul li {
       margin: 0 0 1rem;
       font-weight: bold;
       font-size: 16px; }
@@ -6974,3 +7031,28 @@ footer {
     margin: 2rem 0 0; }
   .arx a.right {
     float: right; }
+
+.arx .breadcrumb {
+  list-style: none;
+  width: 100%;
+  border-top: 4px solid grey;
+  position: relative;
+  margin: 100px 0 0 0; }
+  .arx .breadcrumb li {
+    float: left;
+    width: 30%;
+    text-align: center;
+    position: relative;
+    margin-top: -15px; }
+    .arx .breadcrumb li.highlight {
+      color: #ff5722; }
+      .arx .breadcrumb li.highlight span {
+        background-color: #ff5722; }
+    .arx .breadcrumb li span {
+      width: 25px;
+      height: 25px;
+      background: grey;
+      border-radius: 100%;
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 20px; }

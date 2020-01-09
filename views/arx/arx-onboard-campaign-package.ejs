@@ -1,0 +1,74 @@
+<% include ../partials/header %>
+<% include ../partials/alerts %>
+
+<main id="main" class="arx">
+
+    <% include ./arx-header-welcome %>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1">
+                <ul class="breadcrumb">
+                    <li><span></span>Targeting</li>
+                    <li class="highlight"><span></span>Package</li>
+                    <li ><span></span>Builder</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-10 offset-md-1">
+                <div class="form">
+                    <h3>Build Your Campaign</h3>
+                    <h5>Duration</h5>
+                    <p>You can choose how long you want to run your campaign for, we recommend 6 months with our ‘smart’ automation to maximise your return. </p>
+                    <br />
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    
+                    <ul class="slider-defs">
+                        <li>2 months</li>
+                        <li>4 months</li>
+                        <li>6 months</li>
+                        <li>8 months</li>
+                        <li>Continuous</li>
+                    </ul>
+                    <br />
+                    <br />
+                    <h5>Spend</h5>
+                    <p>You can choose how much you want to invest each month.</p>
+                    <br />
+                    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+                    
+                    <ul class="slider-defs">
+                        <li>£200 p/m</li>
+                        <li>£425 p/m</li>
+                        <li>£600 p/m</li>
+                    </ul>
+
+                    <br />
+                    <br />
+                    <h5>*Predicted Figures</h5>
+                    <h2>9500 Impressions</h2>
+                    <h2>150 Clicks</h2>
+                    <h2>1.5% CTR</h2>
+                    <h2>3 Valid Leads</h2>
+                    <p>*These are predicted figures, your targeting and other factors will affect these outcomes.</p>
+                    
+                    <a class="" href="/arx-onboard-campaign-targeting">Back</a>
+                    <a class="button right" href="/arx-onboard-campaign-builder">Continue</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+     <section class="footer">
+        <div class="container">
+            <div class="col-12">
+                <h5>Footer</h5>
+            </div>
+        </div>
+    </section>
+
+
+<% include ../partials/footer %>
